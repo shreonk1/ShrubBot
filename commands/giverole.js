@@ -16,10 +16,7 @@ module.exports = {
         if (!targetUser) {
             message.reply('Please specify a user to give the role to.')
             return
-        }
-
-        const args = message.content.slice(prefix.length).trim().split(/ +/g);
-        const command = args.shift().toLowerCase(); 
+        } 
 
         args.shift()
 

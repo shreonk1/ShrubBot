@@ -4,7 +4,7 @@ dotenv.config()
 const prefix = '-';
 const fs = require('fs');
 const { Client, Intents } = require('discord.js');
-TOKEN = 'OTYxMjc3ODUzODA5Mzg1NTEy.Yk2pxA.SMj6_bcWG958_t-I90DlIykW5Wk';
+const config = require('./config.json');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
@@ -34,4 +34,4 @@ client.on('messageCreate', message =>{
 });
 
 
-client.login(TOKEN);
+client.login(config.TOKEN);

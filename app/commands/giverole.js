@@ -37,7 +37,7 @@ module.exports = {
         }
 
         const member = guild.members.cache.get(targetUser.id)
-        if(member.roles.cache.has('952595429223190588')) {
+        if(message.member.roles.cache.has('952595429223190588')) {
             member.roles.add(role)
             console.log(`Role given: "${role.name}"`)
 

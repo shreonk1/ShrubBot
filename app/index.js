@@ -10,11 +10,16 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 
 client.commands = new DiscordJS.Collection();
 
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
-
-    client.commands.set(command.name, command);
+dirs = fs.readdirSync('./commands/', {withFileTypes: true})
+for (const dir of dirs) {
+    if(dir.isDirectory()){
+        const commandFiles = fs.readdirSync(`./commands/${dir.name}`).filter(file => file.endsWith('.js'));
+        for (const file of commandFiles) {
+            const command = require(`./commands/${dir.name}/${file}`);
+    
+            client.commands.set(command.name, command);
+        }
+    }
 }
 
 client.once('ready', () => {

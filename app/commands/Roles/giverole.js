@@ -41,7 +41,7 @@ module.exports = {
             member.roles.add(role)
             console.log(`Role given: "${role.name}"`)
 
-            message.reply(`${targetUser} now has the "${roleName}" role!`)
+            message.reply(`"${targetUser}" now has the "${roleName}" role!`)
         } else {
             message.reply('You do not have the correct permissions to use this command. \n Talk to one of our admins if you are having problems.')
         }

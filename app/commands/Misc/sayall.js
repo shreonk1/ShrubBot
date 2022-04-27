@@ -10,17 +10,17 @@ module.exports = {
     execute(message, args, client) {
 
         const targetUser = message.mentions.members.first()
-        let msg = args.join(' ').ment
-        let textchannel = message.mentions.channels.first()// find the channel you mention
+        let msg = args.join(' ')
         message.delete // delete message
         if(!message.member.permissions.has([Permissions.FLAGS.SEND_MESSAGES])) {// check permissions
             return message.reply("You do not have permission to use this command")
-        }else if (!args[0]) {
+         }else if (!args[0]) {
             message.reply('Please tell me what you want me to say.')
-        }else {
-            msg = args.join(' ')
+        }else if(/@[\w\d\.\*\-]+/.test(msg)) {
+            msg = "You aren't allowed to mention through this command!"
             message.channel.send(msg)
-            message.delete(msg)
+        }else{
+            message.channel.send(msg)
             }
-        }
+        }   
     }

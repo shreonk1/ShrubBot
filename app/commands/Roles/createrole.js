@@ -10,15 +10,6 @@ module.exports = {
     name: 'createrole',
     description: 'creates a custom role with a custom choice of colour',
     execute(message, args) {
-
-
-
-
-
-
-
-
-
         
         const role = guild.roles.cache.find((role) => {
             console.log(role)

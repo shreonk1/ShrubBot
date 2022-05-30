@@ -11,7 +11,7 @@ module.exports = {
   * @param {Message} message
   */
         member = message.mentions.members.first()
-        if(message.member.roles.cache.has('952595429223190588')) {
+        if(message.member.permissions.has([Permissions.FLAGS.ADMINISTRATOR])) {
         if(member) {
             const memberTarget = message.guild.members.cache.get(member.id);
             memberTarget.kick();

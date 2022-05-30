@@ -25,7 +25,8 @@ module.exports = {
       - _**Roles**_ 
          > createrole - creates a role with designated colours and names.(**ADMIN**) 
          > giverole - gives a user a role. (**ADMIN**) 
-         > roles - prints out a list of all current roles. 
+         > roles - displays the current roles a user has. 
          > takerole - takes a role from a user. (**ADMIN**)`)
+      
     }
 }

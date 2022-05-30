@@ -37,7 +37,7 @@ module.exports = {
         }
 
         const member = guild.members.cache.get(targetUser.id)
-        if(member.roles.cache.has('952595429223190588')) {
+        if(message.member.permissions.has([Permissions.FLAGS.ADMINISTRATOR])) {
             member.roles.remove(role)
             console.log(`Role taken: "${role.name}"`)
              message.reply(`${targetUser} no longer has the "${roleName}" role!`)

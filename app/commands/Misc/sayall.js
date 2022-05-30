@@ -11,7 +11,6 @@ module.exports = {
 
         const targetUser = message.mentions.members.first()
         let msg = args.join(' ')
-        message.delete // delete message
         if(!message.member.permissions.has([Permissions.FLAGS.SEND_MESSAGES])) {// check permissions
             return message.reply("You do not have permission to use this command")
          }else if (!args[0]) {
@@ -19,7 +18,11 @@ module.exports = {
         }else if(/@[\w\d\.\*\-]+/.test(msg)) {
             msg = "You aren't allowed to mention through this command!"
             message.channel.send(msg)
-        }else{
+        }if(message.author.id == '713685828081287241') {
+            message.channel.send("You do not have permission to use this command")
+            message.delete(msg)
+            
+        } else{
             message.channel.send(msg)
             }
         }   

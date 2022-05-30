@@ -24,7 +24,7 @@ module.exports = {
         const roleName = args.join(' ')
         console.log(roleName)
         const { guild } = message
-
+ 
         const role = guild.roles.cache.find((role) => {
             console.log(role)
             return role.name === roleName
@@ -37,7 +37,7 @@ module.exports = {
         }
 
         const member = guild.members.cache.get(targetUser.id)
-        if(message.member.roles.cache.has('952595429223190588')) {
+        if(message.member.permissions.has([Permissions.FLAGS.ADMINISTRATOR])) {
             member.roles.add(role)
             console.log(`Role given: "${role.name}"`)
 
